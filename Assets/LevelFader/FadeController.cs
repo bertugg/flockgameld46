@@ -9,7 +9,6 @@ public class FadeController : MonoBehaviour
     void Start()
     {
         animator = this.GetComponent<Animator>();
-        GameManager.Instance.fadeController = this;
     }
 
     public void PlayFadeIn(bool invokeEvent = false)

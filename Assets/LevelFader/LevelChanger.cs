@@ -11,7 +11,13 @@ public class LevelChanger : FadeController
 	
 	private bool isChanging = false;
 	private int levelToLoad;
-	
+
+
+	private void Awake()
+	{
+		GameManager.Instance.levelChanger = this;
+	}
+
 	void Update () {
 		if (!isChanging)
 		{

@@ -13,11 +13,15 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-
+        
     }
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GameManager.Instance.IsPaused = true;
+        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("Bark!");
