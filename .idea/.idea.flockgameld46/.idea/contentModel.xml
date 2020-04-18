@@ -13,11 +13,13 @@
           <e p="Misc" t="Include">
             <e p="Singleton.cs" t="Include" />
           </e>
+          <e p="SheepBehaviour.cs" t="Include" />
         </e>
         <e p="LevelFader" t="Include">
           <e p="FadeController.cs" t="Include" />
           <e p="LevelChanger.cs" t="Include" />
         </e>
+        <e p="PlayerMovement.cs" t="Include" />
       </e>
       <e p="flockgameld46.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />
