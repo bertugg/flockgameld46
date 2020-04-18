@@ -18,22 +18,18 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (enabled)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                Debug.Log("Bark!");
-                animator.SetTrigger("Bark");
-                return;
-            }
-
-            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
-            moveDirection *= speed;
-
-            characterController.Move(moveDirection * Time.deltaTime);
-
-            animator.SetBool("Walking", moveDirection != Vector3.zero);
-
+            Debug.Log("Bark!");
+            animator.SetTrigger("Bark");
+            return;
         }
+
+        moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+        moveDirection *= speed;
+
+        characterController.Move(moveDirection * Time.deltaTime);
+
+        animator.SetBool("Walking", moveDirection != Vector3.zero);
     }
 }
