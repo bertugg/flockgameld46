@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource musicSource, ambientSource;
     private void Start()
     {
-        GameManager.Instance.levelManager = this;
+        GameManager.Instance.audioManager = this;
     }
     public enum AUDIOTYPE
     {
