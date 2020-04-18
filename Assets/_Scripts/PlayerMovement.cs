@@ -8,7 +8,9 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
 
     public float speed = 6.0f;
+    public GameObject barkZone;
 
+    private float barkZoneTimer;
     private Vector3 moveDirection = Vector3.zero;
 
     void Start()
@@ -28,7 +30,17 @@ public class PlayerMovement : MonoBehaviour
             {
                 Debug.Log("Bark!");
                 animator.SetTrigger("Bark");
-                return;
+                barkZoneTimer = 0.5f;
+                barkZone.SetActive(true);
+            }
+            
+            if(barkZoneTimer > 0)
+            {
+                barkZoneTimer -= Time.deltaTime;
+            }
+            else if(barkZone.activeInHierarchy)
+            {
+                barkZone.SetActive(false);
             }
 
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
@@ -40,4 +52,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
+
+    
 }

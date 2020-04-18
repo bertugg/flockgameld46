@@ -7,13 +7,18 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject levelContainer;
     [SerializeField] private GameObject[] levelsPrefab;
     private GameObject currentLevel;
+    private GameObject dog;
 
     private void Start()
     {
         GameManager.Instance.levelManager = this;
-        LoadLevel(0);
+        StartGame();
     }
-
+    private void StartGame()
+    {
+        LoadLevel(0);
+        GameManager.Instance.IsControllerOpen = true;
+    }
 
     public void LoadLevel(int _levelIndex)
     {
@@ -27,15 +32,15 @@ public class LevelManager : MonoBehaviour
             currentLevel = Instantiate(levelsPrefab[_levelIndex], levelContainer.transform);
         }
 
-        for (int i = 0; i < currentLevel.transform.GetChild(0).childCount; i++)
+        for (int i = 0; i < currentLevel.transform.GetChild(1).childCount; i++)
         {
-            /*
-            if (currentLevel.transform.GetChild(0).GetChild(i).gameObject.tag == "Ragdoll")
+            if (currentLevel.transform.GetChild(1).GetChild(i).gameObject.tag == "Player")
             {
-                curentLevelRagdollCount++;
+                dog = currentLevel.transform.GetChild(1).GetChild(i).gameObject;
             }
-            */
         }
+
+        GameManager.Instance.cameraManager.SetTarget(dog);
     }
 
     private void ClearContainer()
@@ -45,4 +50,5 @@ public class LevelManager : MonoBehaviour
             Destroy(levelContainer.transform.GetChild(i).gameObject);
         }
     }
+
 }

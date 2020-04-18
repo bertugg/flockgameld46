@@ -5,6 +5,7 @@ public class GameManager : Singleton<GameManager>
     public LevelChanger levelChanger;
     public AudioManager audioManager;
     public UIManager uiManager;
+    public CameraManager cameraManager;
     public LevelManager levelManager;
 
     private int playerLevel;
