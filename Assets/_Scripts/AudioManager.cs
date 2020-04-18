@@ -11,6 +11,23 @@ public class AudioManager : MonoBehaviour
 
 
     private int _previousPitch = -100;
+
+    void Awake()
+    {
+        if (GameManager.Instance.audioManager != null) // Singleton-alike behaviour
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(this.gameObject);
+
+            GameManager.Instance.audioManager = this;
+        
+            soundMixer.audioMixer.SetFloat("SoundVolume", PlayerPrefs.GetFloat("SoundVolume",1));
+            musicMixer.audioMixer.SetFloat("MusicVolume", PlayerPrefs.GetFloat("MusicVolume",1));
+        }
+    }
     
     public enum AUDIOTYPE
     {
