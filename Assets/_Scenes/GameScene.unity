@@ -1556,6 +1556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 2002140729}
+  animator: {fileID: 2002140731}
   speed: 5
 --- !u!95 &2002140731
 Animator:

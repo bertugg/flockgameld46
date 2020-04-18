@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController characterController;
+    public Animator animator;
 
     public float speed = 6.0f;
 
@@ -17,9 +18,20 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
-        moveDirection *= speed;
+        if (enabled)
+        {
+            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+            moveDirection *= speed;
 
-        characterController.Move(moveDirection * Time.deltaTime);
+            characterController.Move(moveDirection * Time.deltaTime);
+
+            animator.SetBool("Walking", moveDirection != Vector3.zero);
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Debug.Log("Bark!");
+                animator.SetTrigger("Bark");
+            }
+        }
     }
 }
