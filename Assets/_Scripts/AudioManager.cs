@@ -7,7 +7,10 @@ public class AudioManager : MonoBehaviour
 {
     public AudioMixerGroup soundMixer, musicMixer;
     public AudioSource musicSource, ambientSource;
-    
+    private void Start()
+    {
+        GameManager.Instance.levelManager = this;
+    }
     public enum AUDIOTYPE
     {
         SOUND,
