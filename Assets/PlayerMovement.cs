@@ -20,6 +20,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (enabled)
         {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Debug.Log("Bark!");
+                animator.SetTrigger("Bark");
+                return;
+            }
+
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             moveDirection *= speed;
 
@@ -27,11 +34,6 @@ public class PlayerMovement : MonoBehaviour
 
             animator.SetBool("Walking", moveDirection != Vector3.zero);
 
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                Debug.Log("Bark!");
-                animator.SetTrigger("Bark");
-            }
         }
     }
 }
