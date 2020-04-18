@@ -9,6 +9,7 @@ public class GameManager : Singleton<GameManager>
 
     private int playerLevel;
     private bool _isControllerOpen = false;
+    public float sleepAmount;
 
     public bool IsControllerOpen
     {
@@ -57,7 +58,6 @@ public class GameManager : Singleton<GameManager>
     private void Start()
     {
         DefaultSettings();
-        StartGame();
     }
 
     private void DefaultSettings()
@@ -65,13 +65,7 @@ public class GameManager : Singleton<GameManager>
         //Default settings
         playerLevel = 1;
         IsControllerOpen = false;
+        sleepAmount = 0;
     }
-    private void StartGame()
-    {
-        levelManager.LoadLevel(playerLevel - 1);//level index
-        //UI
-        //uiManager.UpdateLevelText();
-        //uiManager.OpenInGamePanel();
-
-    }
+    
 }

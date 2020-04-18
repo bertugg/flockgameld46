@@ -11,7 +11,9 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         GameManager.Instance.levelManager = this;
+        LoadLevel(0);
     }
+
 
     public void LoadLevel(int _levelIndex)
     {
