@@ -1,12 +1,16 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.Audio;
+using Random = System.Random;
 
 [RequireComponent(typeof(AudioSource))]
 public class AudioManager : MonoBehaviour
 {
     public AudioMixerGroup soundMixer, musicMixer;
     public AudioSource musicSource, ambientSource;
+
+
+    private int _previousPitch = -100;
     
     public enum AUDIOTYPE
     {
@@ -76,5 +80,19 @@ public class AudioManager : MonoBehaviour
         audio.source.volume = audio.volume;
         audio.source.pitch = audio.pitch;
         return audio.source;
+    }
+
+    protected void PlayWithRandomPitch(Audio audio)
+    {
+        int currentPitch;
+        do
+        {
+            currentPitch = UnityEngine.Random.Range(-10, 10);
+        } while (_previousPitch == currentPitch);
+
+        _previousPitch = currentPitch;
+        audio.source.pitch = currentPitch / 10f;
+        
+        audio.source.Play();
     }
 }
