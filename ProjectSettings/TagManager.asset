@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - SheepMovementTarget
+  - SleepZone
   layers:
   - Default
   - TransparentFX

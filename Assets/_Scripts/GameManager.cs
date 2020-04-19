@@ -2,6 +2,8 @@
 
 public class GameManager : Singleton<GameManager>
 {
+    public static readonly float MAXENERGY = 100;
+    
     public LevelChanger levelChanger;
     public FlockAudioManager audioManager;
     public UIManager uiManager;
@@ -31,16 +33,19 @@ public class GameManager : Singleton<GameManager>
             uiManager.scoreText.text = value + "";
         }
     }
-
-
-    private float _energy = 100;
+    
+    private float _energy = MAXENERGY;
     public float Energy
     {
         get { return _energy; }
         set
         {
+            if (value > MAXENERGY)
+                value = MAXENERGY;
+            else if(value < 0)
+                value = 0;
             _energy = value;
-            uiManager.energyBar.fillAmount = value;
+            uiManager.energyBar.fillAmount = value / MAXENERGY;
         }
     }
 

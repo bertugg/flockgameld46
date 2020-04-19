@@ -69,17 +69,13 @@ public class AudioManager : MonoBehaviour
         audio.source = gameObject.AddComponent<AudioSource>();
         audio.source.clip = audio.clip;
         if (audio.type == AUDIOTYPE.SOUND)
-        {
             audio.source.outputAudioMixerGroup = soundMixer;
-            audio.source.loop = false;
-        }
         else // if sound.type == AUDIOTYPE.MUSIC
-        {
             audio.source.outputAudioMixerGroup = musicMixer;
-            audio.source.loop = true;
-        }
+        audio.source.loop = audio.isLooping;
         audio.source.volume = audio.volume;
         audio.source.pitch = audio.pitch;
+        
         return audio.source;
     }
 

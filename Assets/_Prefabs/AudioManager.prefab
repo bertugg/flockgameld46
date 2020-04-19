@@ -249,93 +249,109 @@ MonoBehaviour:
     source: {fileID: 0}
     volume: 1
     pitch: 1
+    isLooping: 0
   DogBark:
     type: 0
     clip: {fileID: 8300000, guid: ec55b0acfe409449599ba131009c5e09, type: 3}
     source: {fileID: 0}
     volume: 1
     pitch: 1
+    isLooping: 0
   Grass:
     type: 0
     clip: {fileID: 8300000, guid: 8f316c2b5923c47708c098aadd5c7503, type: 3}
     source: {fileID: 0}
     volume: 1
     pitch: 1
+    isLooping: 0
   DyingSheep:
     type: 0
     clip: {fileID: 8300000, guid: bd9882a89b8c94590a85aa47327fe10e, type: 3}
     source: {fileID: 0}
     volume: 1
     pitch: 1
+    isLooping: 0
   Wolf:
     type: 0
     clip: {fileID: 0}
     source: {fileID: 0}
     volume: 1
     pitch: 1
+    isLooping: 0
   CountdownTimer:
     type: 0
     clip: {fileID: 0}
     source: {fileID: 0}
     volume: 1
     pitch: 1
+    isLooping: 0
   Snoring:
     type: 0
     clip: {fileID: 8300000, guid: f86fe9aaf5cf24e6f9e6d2d0a173da3e, type: 3}
     source: {fileID: 0}
     volume: 1
     pitch: 1
+    isLooping: 1
   ButtonClick:
     type: 0
     clip: {fileID: 8300000, guid: a5e84b8ca955c4d979b9f77406a948a1, type: 3}
     source: {fileID: 0}
     volume: 1
     pitch: 1
+    isLooping: 0
   LevelFail:
     type: 0
     clip: {fileID: 0}
     source: {fileID: 0}
     volume: 1
     pitch: 1
+    isLooping: 0
   LevelWin:
     type: 0
     clip: {fileID: 0}
     source: {fileID: 0}
     volume: 1
     pitch: 1
+    isLooping: 0
   SheepDisease:
     type: 0
     clip: {fileID: 8300000, guid: e90e701e931ab48f2a6821c180b9b2fa, type: 3}
     source: {fileID: 0}
     volume: 1
     pitch: 1
+    isLooping: 0
   SheepHealed:
     type: 0
     clip: {fileID: 8300000, guid: d2e1b954a44af47c59932b2d8a978962, type: 3}
     source: {fileID: 0}
     volume: 1
     pitch: 1
+    isLooping: 0
   GameplayMusic:
     type: 1
     clip: {fileID: 8300000, guid: 6820b055f75504fb3896000438cd794a, type: 3}
     source: {fileID: 0}
     volume: 1
     pitch: 1
+    isLooping: 1
   MainMenuMusic:
     type: 1
     clip: {fileID: 8300000, guid: 6820b055f75504fb3896000438cd794a, type: 3}
     source: {fileID: 0}
     volume: 1
     pitch: 1
+    isLooping: 1
   NatureAmbient:
     type: 2
     clip: {fileID: 8300000, guid: 5a82fe95d919b46459041a9f8d7c022e, type: 3}
     source: {fileID: 0}
     volume: 1
     pitch: 1
+    isLooping: 1
   CloseEyesAmbient:
     type: 2
     clip: {fileID: 0}
     source: {fileID: 0}
     volume: 1
     pitch: 1
+    isLooping: 0
