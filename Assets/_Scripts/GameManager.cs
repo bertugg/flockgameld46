@@ -3,7 +3,7 @@
 public class GameManager : Singleton<GameManager>
 {
     public LevelChanger levelChanger;
-    public AudioManager audioManager;
+    public FlockAudioManager audioManager;
     public UIManager uiManager;
     public CameraManager cameraManager;
     public LevelManager levelManager;

@@ -53,8 +53,23 @@ public class FlockAudioManager : AudioManager
 
     #endregion
 
+    void Awake()
+    {
+        if (GameManager.Instance.audioManager != null) // Singleton-alike behaviour
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(this.gameObject);
 
-    
+            GameManager.Instance.audioManager = this;
+        
+            soundMixer.audioMixer.SetFloat("SoundVolume", PlayerPrefs.GetFloat("SoundVolume",1));
+            musicMixer.audioMixer.SetFloat("MusicVolume", PlayerPrefs.GetFloat("MusicVolume",1));
+        }
+    }
+
     public void Play(AudioName name)
     {
         switch (name)

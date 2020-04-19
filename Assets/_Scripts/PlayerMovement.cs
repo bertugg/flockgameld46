@@ -13,11 +13,6 @@ public class PlayerMovement : MonoBehaviour
     private float barkZoneTimer;
     private Vector3 moveDirection = Vector3.zero;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         if (GameManager.Instance.IsControllerOpen)
@@ -30,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 Debug.Log("Bark!");
                 animator.SetTrigger("Bark");
+                GameManager.Instance.audioManager.Play(FlockAudioManager.AudioName.DogBark);
                 barkZoneTimer = 0.5f;
                 barkZone.SetActive(true);
             }
